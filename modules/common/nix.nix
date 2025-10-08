@@ -1,0 +1,51 @@
+{ config, inputs, lib, ...}:
+
+{
+  security.pam.services.login.enableGnomeKeyring = true;
+  security.sudo.extraRules = [
+    {
+      users = [config.hostSpec.username];
+      commands = [
+        {
+          command = "ALL";
+          options = ["NOPASSWD"];
+        }
+      ];
+    }
+  ];
+
+  nix = {
+    nixPath = ["nixpkgs=${inputs.nixpkgs}"];
+    channel.enable = false;
+
+    settings = {
+      download-buffer-size = 262144000; # 250 MB
+      auto-optimise-store = true;
+      experimental-features = ["nix-command" "flakes"];
+
+      substituters = [
+        "https://cache.nixos.org?priority=10"
+        "https://hyprland.cachix.org"
+        "https://nix-community.cachix.org"
+        "https://numtide.cachix.org"
+      ];
+
+      trusted-public-keys = [
+        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE="
+      ];
+
+      # wheel group gets trusted access to nix daemon
+      trusted-users = [ "@wheel" ];
+    };
+
+    gc = {
+      automatic = true;
+      persistent = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
+}

@@ -1,0 +1,28 @@
+{ inputs, ... }:
+{
+  imports = [
+    inputs.zen-browser.homeModules.twilight-official
+  ];
+  
+  programs.zen-browser = {
+    enable = true;
+
+    policies = {
+      AutofillCrediCardEnabled = false;
+      DisableFeedbackCommands = true;
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+      DisableTelemtry = true;
+      NoDefaultBookmarks = true;
+      OfferToSaveLogins = false;
+      EnableTrackingProtection = {
+        Value = true;
+        Locked = true;
+        Cryptomining = true;
+        Fingerprinting = true;
+      };
+    };
+
+  };
+
+}
