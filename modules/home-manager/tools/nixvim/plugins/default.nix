@@ -37,7 +37,7 @@
     #
     # ========== languages ==========
     #
-    # nixvim-config.plugins.treesitter.enable = lib.mkDefault true;
+    nixvim-config.plugins.treesitter.enable = lib.mkDefault true;
 
     #
     # ========== lsp ==========
