@@ -26,7 +26,7 @@ mariadb_state () {
 
 argo_syn () 
 { 
-    kubectl "$@" -n syn get secret steward -o jsonpath='{.data.token}' | base64 -d | xclip -selection clipboard;
+    kubectl "$@" -n syn get secret steward -o jsonpath='{.data.token}' | base64 -d | wl-copy;
     servicename=argocd-server;
     if ! kubectl -n syn get svc "$servicename" &> /dev/null; then
         servicename=syn-argocd-server;

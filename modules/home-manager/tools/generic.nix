@@ -14,8 +14,8 @@
     kubectl-split-config
     jq
     yq-go
-    ferdium
     obsidian
+    wl-clipboard
   ];
 
   programs = {

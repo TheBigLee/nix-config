@@ -1,5 +1,5 @@
 #
-{ config, lib, ... }:
+{ config, pkgs, lib, ... }:
 {
   options = {
     nixvim-config.plugins.treesitter.enable = lib.mkEnableOption "enables treesiter module";
@@ -35,7 +35,11 @@
           vimdoc
           yaml
         ];
-        indent = true;
+        settings = {
+          highlight.enable = true;
+          indent.enable = true;
+        };
+        #indent = true;
         folding = true;
         nixvimInjections = true;
       };

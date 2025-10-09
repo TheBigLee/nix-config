@@ -5,6 +5,6 @@
     ./development
     ./hyprland
     ./mail
-    ./zoom
+    ./generic-unstable.nix
   ];
 }

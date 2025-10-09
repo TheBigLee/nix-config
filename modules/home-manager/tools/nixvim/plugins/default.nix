@@ -43,6 +43,7 @@
     # ========== lsp ==========
     #
     nixvim-config.plugins.fidget.enable = lib.mkDefault true;
+    nixvim-config.plugins.lspconfig.enable = lib.mkDefault true;
     #
     # ========== search ==========
     #
@@ -51,7 +52,7 @@
     #
     # ========== sessions ==========
     #
-    nixvim-config.plugins.auto-session.enable = lib.mkDefault true;
+    nixvim-config.plugins.auto-session.enable = lib.mkDefault false;
     #
     # ========== utils ==========
     #
