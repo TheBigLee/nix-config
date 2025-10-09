@@ -1,4 +1,4 @@
-{ config, inputs, lib, pkgs, ... }:
+{ config, inputs, lib, ... }:
 
 let
   stateVersion = "25.05";

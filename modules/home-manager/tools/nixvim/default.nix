@@ -3,12 +3,7 @@
 # Some fantastic inspiration for this config
 # https://seniormars.com/posts/neovim-workflow/
 
-{
-  inputs,
-  pkgs,
-  lib,
-  ...
-}:
+{ inputs, pkgs, lib,...}:
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim

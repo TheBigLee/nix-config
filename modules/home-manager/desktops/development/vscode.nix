@@ -41,7 +41,7 @@
       {
         key = "shift+tab";
         command = "outdent";
-        when = "editorTextFoucs && !editorTabMovesFocus";
+        when = "editorTextFocus && !editorTabMovesFocus";
       }
     ];
   };

@@ -47,6 +47,7 @@ in
   vim = "nvim";
 
   #-------------Kubernetes------------
+  kubectl = "kubecolor";
   k = "kubectl";
   pctl = "cli";
 

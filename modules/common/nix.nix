@@ -1,4 +1,4 @@
-{ config, inputs, lib, ...}:
+{ config, inputs, ...}:
 
 {
   security.pam.services.login.enableGnomeKeyring = true;
@@ -13,6 +13,18 @@
       ];
     }
   ];
+
+  #
+  # ========== Nix Helper ==========
+  #
+  # Provides better build output and will also handle garbage collection in place of standard nix gc (garbage collection)
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 7d --keep 7";
+    flake = "/home/${config.hostSpec.username}/dev/nix/nix-config";
+  };
+
 
   nix = {
     nixPath = ["nixpkgs=${inputs.nixpkgs}"];
@@ -41,11 +53,11 @@
       trusted-users = [ "@wheel" ];
     };
 
-    gc = {
-      automatic = true;
-      persistent = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
+    #gc = {
+    #  automatic = true;
+    #  persistent = true;
+    #  dates = "weekly";
+    #  options = "--delete-older-than 7d";
+    #};
   };
 }

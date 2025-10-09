@@ -34,6 +34,7 @@ in
       ];
       shell = pkgs.zsh;
       hashedPasswordFile = sopsHashedPasswordFile;
+      home = "/home/${hostSpec.username}";
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE5cVc/FNIWZ24dA0147cXiCEWW/vkRNI0CCPi+13m21 main@2025"
       ];

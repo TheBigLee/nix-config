@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ lib, ... }:
 {
   options.hostSpec = lib.mkOption {
     type = lib.types.submodule {

@@ -12,7 +12,7 @@
       DisableFeedbackCommands = true;
       DisableFirefoxStudies = true;
       DisablePocket = true;
-      DisableTelemtry = true;
+      DisableTelemetry = true;
       NoDefaultBookmarks = true;
       OfferToSaveLogins = false;
       EnableTrackingProtection = {

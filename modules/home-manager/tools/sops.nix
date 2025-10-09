@@ -1,4 +1,4 @@
-{ inputs, pkgs, config, lib, ... }:
+{ inputs, pkgs, config, ... }:
 
 let
   secretFile = (builtins.toString inputs.nix-secrets) + "/secrets.yaml";

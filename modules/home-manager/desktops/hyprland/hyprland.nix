@@ -1,5 +1,3 @@
-
-{ pkgs, lib, inputs,... }:
 {
   wayland.windowManager.hyprland = {
     enable = true;
@@ -31,7 +29,7 @@
       # Autostart
       exec-once = [
         "hyprpanel"
-        "nm-applet"
+        "ferdium"
       ];
 
       animations = {

@@ -1,9 +1,5 @@
 # LSP
-{
-  config,
-  lib,
-  ...
-}:
+{ config, lib, ... }:
 let
   flakeRoot = lib.custom.relativeToRoot "./.";
 in

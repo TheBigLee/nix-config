@@ -1,7 +1,4 @@
-{ pkgs, lib, config, hostSpec, ... }:
-let
-  homeDirectory = config.home.homeDirectory;
-in
+{ lib, config, hostSpec, ... }:
 {
 
   imports = lib.flatten [

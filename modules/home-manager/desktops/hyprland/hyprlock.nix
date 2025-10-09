@@ -9,7 +9,7 @@
       };
 
       background = {
-        path = "screenshot";
+        path = "~/Pictures/Wallpapers/void_girl.png";
         blur_passes = 1;
         contrast = 0.8916;
         brightness = 0.8172;
@@ -94,7 +94,7 @@
         font_color = "rgb(200,200,200)";
         fade_on_empty = false;
         font_family = "SF Pro Display Bold";
-        placeholder_text = "<i><span foreground=\"##ffffff99\">🔒 Enter Pass</span></i>";
+        placeholder_text = "<i><span foreground=\"##ffffff99\">🔒 Enter Password</span></i>";
         hide_input = false;
         position = "0, -210";
         halign = "center";

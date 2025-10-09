@@ -1,4 +1,4 @@
-{ inputs, outputs, config, lib, pkgs, ...}:
+{ inputs, outputs, lib, pkgs, ...}:
 {
 
   imports = lib.flatten [
@@ -44,4 +44,16 @@
       allowUnfree = true;
     };
   };
+
+  system.autoUpgrade = {
+    enable = true;
+    dates = "daily";
+    randomizedDelaySec = "45min";
+    flags = [
+      "--refresh"
+      "-L" # print build logs 
+    ];
+    flake = inputs.self.outPath;
+  };
+
 }

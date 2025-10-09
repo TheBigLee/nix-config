@@ -88,7 +88,8 @@
 
       systemSettings = {
         timezone = "Europe/Zurich";
-        locale = "en_US.UTF-8";
+        locale = "de_CH.UTF-8";
+        language = "en_US.UTF-8";
       };
     in
     {

@@ -2,20 +2,22 @@
 
 {
   home.packages = with pkgs; [
-    fd    # find replacement
-    eza   # better ls
     btop
+    eza   # better ls
+    fd    # find replacement
     htop
-    kubectl
-    kubectx
-    openshift
-    krew
-    paralus-cli
-    kubectl-split-config
     jq
-    yq-go
+    just
+    krew
+    kubecolor
+    kubectl
+    kubectl-split-config
+    kubectx
     obsidian
+    openshift
+    paralus-cli
     wl-clipboard
+    yq-go
   ];
 
   programs = {

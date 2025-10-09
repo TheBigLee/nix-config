@@ -1,4 +1,4 @@
-{pkgs, config, ...}:
+{config, ...}:
 {
   services.linux-wallpaperengine = {
     enable = true;

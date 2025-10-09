@@ -1,4 +1,4 @@
-{ pkgs, lib, config, ... }:
+{ config, ... }:
 {
   programs._1password.enable = true;
   programs._1password-gui = {

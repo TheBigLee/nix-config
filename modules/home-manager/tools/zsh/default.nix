@@ -1,8 +1,9 @@
-{ pkgs, inputs, config, lib, ... }:
-let
-  secretFile = (builtins.toString inputs.nix-secrets) + "/secrets.yaml";
-in
+{ pkgs, config, lib, ... }:
 {
+    #  imports = [
+    #    ./starship.nix
+    #  ];
+
   sops.secrets = {
     "cattledog/url" = {};
     "cattledog/access_key" = {};
