@@ -233,4 +233,9 @@
     # vim.cmd("highlight iCursor guifg=black guibg=orange");
     # '';
   };
+  xdg.mimeApps.defaultApplications = {
+    "text/plain" = [ "nvim.desktop" ];
+    "text/json" = [ "nvim.desktop" ];
+    "text/yaml" = [ "nvim.desktop" ];
+  };
 }
