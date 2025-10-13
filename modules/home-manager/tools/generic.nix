@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    bash
     btop
     eza   # better ls
     fd    # find replacement

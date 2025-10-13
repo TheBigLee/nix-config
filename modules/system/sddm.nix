@@ -1,26 +1,9 @@
 { pkgs, inputs, ... }:
 
 let
-  sddm-astronaut = pkgs.sddm-astronaut;
-#  sddm-astronaut = pkgs.sddm-astronaut.override {
-#    themeConfig = {
-#      HeaderTextColor = "#ffffff";
-#      DateTextColor = "#ffffff";
-#      TimeTextColor = "#ffffff";
-#      LoginFieldTextColor = "#ffffff";
-#      PasswordFieldTextColor = "#ffffff";
-#      UserIconColor = "#ffffff";
-#      PasswordIconColor = "#ffffff";
-#      WarningColor = "#ff6b6b";
-#      LoginButtonBackgroundColor = "#1a1a1a";
-#      SystemButtonsIconsColor = "#ffffff";
-#      SessionButtonTextColor = "#ffffff";
-#      VirtualKeyboardButtonTextColor = "#ffffff";
-#      DropdownBackgroundColor = "#1a1a1a";
-#      HighlightBackgroundColor = "#333333";
-#      #Background = "/home/marco/.config/wallpapers/wallpaper1.jpg";
-#    };
-#  };
+  sddm-astronaut = pkgs.sddm-astronaut.override {
+    embeddedTheme = "black-hole";
+  };
 in {
   services.displayManager = {
     sddm = {

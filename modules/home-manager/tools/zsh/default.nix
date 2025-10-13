@@ -81,6 +81,8 @@
         export CLUSTER_BASE_DIR=''${HOME}/dev/vshn/openshift4-clusters
 
         export KUBE_EDITOR="nvim"
+        compdef kubecolor=kubectl
+
       '')
     ];
 
