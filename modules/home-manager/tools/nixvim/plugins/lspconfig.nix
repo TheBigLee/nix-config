@@ -56,22 +56,33 @@ in
                       (builtins.getFlake "${flakeRoot}").nixosConfigurations.${config.hostSpec.hostName}.options.home-manager.users.value.${config.hostSpec.username}
                     '';
                   };
-                  darwin = {
-                    expr = ''
-                      let configs = (builtins.getFlake "${flakeRoot}").darwinConfigurations;
-                      in (builtins.head (builtins.attrValues configs)).options
-                    '';
-                  };
                 };
               };
             };
-            ts_ls = {
-              enable = false;
+            gopls = {
+              enable = true;
               filetypes = [
-                "javascript"
-                "javascriptreact"
-                "typescript"
-                "typescriptreact"
+                "go"
+              ];
+            };
+            jsonnet_ls = {
+              enable = true;
+              filetypes = [
+                "jsonnet"
+                "libsonnet"
+              ];
+            };
+            yamlls = {
+              enable = true;
+              filetypes = [
+                "yaml"
+                "yml"
+              ];
+            };
+            jsonls = {
+              enable = true;
+              filetypes = [
+                "json"
               ];
             };
             typos_lsp = {
@@ -82,24 +93,6 @@ in
                 };
               };
             };
-            eslint = {
-              enable = true;
-            };
-            pyright = {
-              enable = true;
-            };
-            #          ruff-lsp = {enable = true;};
-
-            #          rust-analyzer = {
-            #            enable = true;
-            #            installCargo = true;
-            #            installRustc = true;
-            #            settings = {
-            #              procMacro = {
-            #                enable = true;
-            #              };
-            #            };
-            #          };
           };
           keymaps = {
             silent = true;

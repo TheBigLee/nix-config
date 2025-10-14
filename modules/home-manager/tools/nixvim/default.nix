@@ -14,6 +14,20 @@
 
   programs.nixvim = {
 #    nixpkgs.pkgs = import <nixpkgs> { };
+    extraPackages = with pkgs; [
+      # Formatters
+      gofumpt
+      goimports-reviser
+      golines
+
+      # LSP
+      gopls
+      jsonnet-language-server
+
+      # Tools
+      go
+      gcc
+    ];
 
     enable = true;
     enableMan = true; # install man pages for nixvim options

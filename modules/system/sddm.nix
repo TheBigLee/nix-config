@@ -1,9 +1,12 @@
-{ pkgs, inputs, ... }:
+{ pkgs, config, inputs, ... }:
 
 let
-  sddm-astronaut = pkgs.sddm-astronaut.override {
-    embeddedTheme = "black-hole";
-  };
+  sddm-astronaut = pkgs.sddm-astronaut;
+  #  sddm-astronaut = pkgs.sddm-astronaut.override {
+  #    themeConfig = {
+  #      Background = "${config.hostSpec.username}/Pictures/Wallpapers/void_girl.png";
+  #    };
+  #  };
 in {
   services.displayManager = {
     sddm = {
