@@ -21,6 +21,10 @@
           type = lib.types.attrsOf lib.types.str;
           description = "The email of the user";
         };
+        monitor = lib.mkOption {
+          type = lib.types.str;
+          description = "The name of the main monitor of the host";
+        };
       };
     };
   };

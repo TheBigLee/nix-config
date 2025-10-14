@@ -2,7 +2,7 @@
 
 let
   stateVersion = "25.05";
-  hostName = "Thor";
+  hostName = "Freya";
 in
 {
   imports = lib.flatten [
@@ -10,8 +10,7 @@ in
     # ======= Hardware =======
     #
     ./hardware-configuration.nix
-    inputs.nixos-hardware.nixosModules.common-cpu-amd
-    inputs.nixos-hardware.nixosModules.common-pc-ssd
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-13th-gen
 
     #
     # ====== Misc Inputs ======
@@ -35,22 +34,11 @@ in
 
   hostSpec = {
     hostName = hostName;
+    monitor = "eDP-1";
   };
 
 
   hardware.graphics = {
     enable = true;
   };
-
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = true;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-
 }

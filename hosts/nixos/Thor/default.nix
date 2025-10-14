@@ -35,6 +35,7 @@ in
 
   hostSpec = {
     hostName = hostName;
+    monitor = "DP-6";
   };
 
 
