@@ -13,7 +13,7 @@
       sunrise = {
         calendar = "*-*-* 09:00:00";
         requests = [
-          [ "temperature" "6500" ]
+          [ "temperature" "6650" ]
           [ "gamma 100" ]
         ];
       };

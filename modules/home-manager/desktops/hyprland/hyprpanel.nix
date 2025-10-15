@@ -1,4 +1,7 @@
-{ config, ...}:
+{ config, lib, ...}:
+let
+  isLaptop = lib.attrByPath [ "profiles" "laptop" "enable" ] false config.hostSpec;
+in
 {
   programs.hyprpanel = {
     enable = true;
@@ -8,7 +11,10 @@
           "0" = {
             left = [ "dashboard" "workspaces" "windowtitle" ];
             middle = [ "notifications" "clock"];
-            right = [ "cpu" "cputemp" "ram" "volume" "network" "bluetooth" "battery" "systray" "power" ];
+            right = if isLaptop then 
+              [ "cpu" "cputemp" "ram" "volume" "network" "bluetooth" "battery" "systray" "power" ]
+            else
+              [ "cpu" "cputemp" "ram" "volume" "network" "bluetooth" "systray" "power" ];
           };
         };
         launcher.autoDetectIcon = true;
