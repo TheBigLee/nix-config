@@ -5,6 +5,7 @@
     (map lib.custom.relativeToRoot [
       "modules/common/host-spec.nix"
       "modules/home-manager"
+      "modules/profiles/home-manager/laptop.nix"
     ])
   ];
 
@@ -19,6 +20,8 @@
     #  ".config/hypr".recursive = true;
     #};
   };
+
+  profiles = config.hostSpec.profiles;
 
   programs.home-manager.enable = true;
 }

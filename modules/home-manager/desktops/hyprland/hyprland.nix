@@ -28,7 +28,6 @@
 
       # Autostart
       exec-once = [
-        "hyprpanel"
         "ferdium"
       ];
 

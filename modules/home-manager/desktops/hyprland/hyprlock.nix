@@ -1,4 +1,6 @@
 {
+  wayland.windowManager.hyprland.settings.exec-once = [ "hyprpanel" ];
+
   programs.hyprlock = {
     enable = true;
 

@@ -84,7 +84,6 @@
       copyindent = true;
       cindent = true; # automatically indent braces
       cinkeys = "0{,0},0),0],:,!^F,o,O,e";
-      cino = "";
       smartindent = true;
       smarttab = true;
       shiftwidth = 2;

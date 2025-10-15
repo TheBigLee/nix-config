@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }:
+{ pkgs, inputs, lib, ... }:
 
 let
   stateVersion = "25.05";
@@ -35,10 +35,17 @@ in
   hostSpec = {
     hostName = hostName;
     monitor = "eDP-1";
+    profiles = {
+      laptop.enable = true;
+    };
   };
 
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
 
   hardware.graphics = {
     enable = true;
   };
+
 }
