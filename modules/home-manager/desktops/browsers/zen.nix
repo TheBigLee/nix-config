@@ -1,11 +1,15 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 {
   imports = [
     inputs.zen-browser.homeModules.twilight-official
   ];
-  
+
   programs.zen-browser = {
     enable = true;
+
+    profiles = {
+      "${config.home.username}" = {};
+    };
 
     policies = {
       AutofillCrediCardEnabled = false;
@@ -24,5 +28,4 @@
     };
 
   };
-
 }

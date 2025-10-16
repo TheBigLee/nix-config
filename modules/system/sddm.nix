@@ -17,11 +17,11 @@ in {
         sddm-astronaut
       ];
       theme = "sddm-astronaut-theme";
-      settings = {
-        Wayland.SessionDir = "${
-         inputs.hyprland.packages."${pkgs.system}".hyprland
-        }/share/wayland-sessions";
-      };
+        #settings = {
+        #  Wayland.SessionDir = "${
+        #   inputs.hyprland.packages."${pkgs.system}".hyprland
+        #  }/share/wayland-sessions";
+        #};
     };
   };
 

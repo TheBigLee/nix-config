@@ -1,9 +1,12 @@
-{ config, inputs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [ inputs.stylix.nixosModules.stylix ];
   stylix = {
     enable = true;
-    image = "/home/${config.hostSpec.username}/Pictures/Wallpapers/void_girl.png";
+    image = pkgs.fetchurl {
+    url = "https://github.com/TheBigLee/nix-config/blob/main/files/system/stylix/wallpapers/void_girl.png?raw=true";
+    hash = "sha256-zAQehTgMMQ9z8DK2HRwAVvVjUb6xhiMrsOmfrIRJUrI=";
+    };
     polarity = "dark";
   };
 }

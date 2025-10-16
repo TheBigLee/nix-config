@@ -49,10 +49,20 @@
       inputs = { };
     };
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    #hyprland = {
+    #  url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
 
-    stylix.url = "github:nix-community/stylix/release-25.05";
+    hyprpanel = {
+      url = "github:Jas-SinghFSU/HyprPanel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Code formatter
     treefmt = {
@@ -68,7 +78,7 @@
       nixos-hardware,
       nixpkgs,
       nixpkgs-unstable,
-      hyprland,
+    #hyprland,
       hyprpanel,
       stylix,
       self,

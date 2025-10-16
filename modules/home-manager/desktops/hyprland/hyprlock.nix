@@ -11,7 +11,7 @@
       };
 
       background = {
-        path = "~/Pictures/Wallpapers/void_girl.png";
+        #path = "~/Pictures/Wallpapers/void_girl.png";
         blur_passes = 1;
         contrast = 0.8916;
         brightness = 0.8172;
@@ -36,7 +36,7 @@
         {
           monitor = "";
           text = "cmd[update:1000] echo \"<span>$(date +\"%H:%M\")</span>\"";
-          color = "rgba(216, 222, 233, 0.70)";
+          # color = "rgba(216, 222, 233, 0.70)";
           font_size = 130;
           font_family = "SF Pro Display Bold";
           position = "0, 240";
@@ -47,7 +47,7 @@
         {
           monitor = "";
           text = "cmd[update:1000] echo -e \"$(date +\"%A, %d %B\")\"";
-          color = "rgba(216, 222, 233, 0.70)";
+          # color = "rgba(216, 222, 233, 0.70)";
           font_size = 30;
           font_family = "SF Pro Display Bold";
           position = "0, 105";
@@ -59,7 +59,7 @@
         {
           monitor = "";
           text = "    $USER";
-          color = "rgba(216, 222, 233, 0.80)";
+          # color = "rgba(216, 222, 233, 0.80)";
           font_size = 18;
           font_family = "SF Pro Display Bold";
           position = "0, -130";
@@ -72,10 +72,10 @@
       shape = {
         monitor = "";
         size = "300, 60";
-        color = "rgba(255, 255, 255, .1)";
+        #color = "rgba(255, 255, 255, .1)";
         rounding = -1;
         border_size = 0;
-        border_color = "rgba(255, 255, 255, 0)";
+        # border_color = "rgba(255, 255, 255, 0)";
         rotate = 0;
         xray = false; # if true, make a "hole" in the background (rectangle of specified size, no rotation)
 
@@ -91,9 +91,9 @@
         dots_size = 0.2;
         dots_spacing = 0.2;
         dots_center = true;
-        outer_color = "rgba(255,255,255,0)";
-        inner_color = "rgba(25,25,25,0.1)";
-        font_color = "rgb(200,200,200)";
+        #outer_color = "rgba(255,255,255,0)";
+        #inner_color = "rgba(25,25,25,0.1)";
+        #font_color = "rgb(200,200,200)";
         fade_on_empty = false;
         font_family = "SF Pro Display Bold";
         placeholder_text = "<i><span foreground=\"##ffffff99\">🔒 Enter Password</span></i>";
