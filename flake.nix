@@ -15,6 +15,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    #1Password
+    _1password-shell-plugins.url = "github:1Password/shell-plugins";
+
     # SecureBoot support
     lanzaboote.url = "github:nix-community/lanzaboote?ref=master";
 
@@ -49,7 +52,7 @@
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
 
-    stylix.url = "github:danth/stylix";
+    stylix.url = "github:nix-community/stylix/release-25.05";
 
     # Code formatter
     treefmt = {

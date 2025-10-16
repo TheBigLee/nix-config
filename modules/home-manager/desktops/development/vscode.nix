@@ -16,7 +16,7 @@
       ms-vscode.makefile-tools
       johnpapa.vscode-peacock
       redhat.vscode-yaml
-      vscodevim.vim
+      #      vscodevim.vim
       bbenoist.nix
     ];
     profiles.default.userSettings = {
