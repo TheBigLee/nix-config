@@ -7,7 +7,7 @@
     #
     # ========== ui ==========
     #
-    nixvim-config.colorschemes.enable = lib.mkDefault true;
+    # nixvim-config.colorschemes.enable = lib.mkDefault true;
     nixvim-config.plugins.colorizer.enable = lib.mkDefault false;
     nixvim-config.plugins.dressing.enable = lib.mkDefault false;
     #
