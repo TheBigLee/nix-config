@@ -22,6 +22,8 @@
     profiles.default.userSettings = {
       "editor.tabSize" = 2;
       "editor.insertSpaces" = true;
+      "dotfiles.repository" = "TheBigLee/vscode-dev-containers-dotfiles";
+      "dotfiles.installPath" = "install.sh";
     };
     profiles.default.keybindings = [
       {
