@@ -8,10 +8,15 @@
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
     ./plugins
-    ./colorschemes.nix
+    #./colorschemes.nix
     ./keymaps.nix
   ];
 
+  stylix.targets.nixvim.transparentBackground = {
+    main = true;
+    signColumn = true;
+    numberLine = true;
+  };
   programs.nixvim = {
 #    nixpkgs.pkgs = import <nixpkgs> { };
     extraPackages = with pkgs; [

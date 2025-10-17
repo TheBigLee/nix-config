@@ -7,9 +7,7 @@
   programs.starship = {
     enable = true;
     settings = {
-      #      format = "$all$nix_shell$golang$git_branch$git_commit$git_state$git_status\n $directory";
-      format = "[](bg:#030B16 fg:#7DF9AA)[ ](bg:#7DF9AA fg:#090c0c)[](fg:#1C3A5E bg:#3B76F0)$directory[](fg:#3B76F0 bg:#FCF391)$git_branch$git_status$git_metrics";
-      #      format = ''
+      format = "[](#9A348E)$os$username[](bg:#DA627D fg:#9A348E)$directory[](fg:#DA627D bg:#FCA17D)$git_branch$git_status[](fg:#FCA17D bg:#86BBD8)$c$golang[](fg:#86BBD8 bg:#06969A)$docker_context[](fg:#06969A bg:#33658A)$time[ ](fg:#33658A)";
       #[┌───────────────────>](bold green)
       #[│](bold green)$directory$rust$package
       #[└─>](bold green) 

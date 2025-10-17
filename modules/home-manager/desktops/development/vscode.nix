@@ -22,6 +22,23 @@
     profiles.default.userSettings = {
       "editor.tabSize" = 2;
       "editor.insertSpaces" = true;
+      "editor.fontLigatures" = true;
+      "files.insertFinalNewline" = true;
+      "terminal.integrated.defaultProfile.linux" = "zsh";
+      "security.workspace.trust.untrustedFiles" = "open";
+      "redhat.telemetry.enabled" = false;
+      "go.toolsManagement.autoUpdate" = true;
+      "dotfiles.repository" = "TheBigLee/vscode-dev-containers-dotfiles";
+      "dev.containers.copyGitConfig" = false;
+      "github.copilot.enable" = {
+        "*" = false;
+      };
+      "github.copilot.editor.enableAutoCompletions" = false;
+      "github.copilot.editor.enableCodeActions" = false;
+      "github.copilot.nextEditSuggestions.enabled" = false;
+      "github.copilot.renameSuggestions.triggerAutomatically" = false;
+      "chat.commandCenter.enabled" = false;
+      "chat.agent.enabled" = false;
     };
     profiles.default.keybindings = [
       {

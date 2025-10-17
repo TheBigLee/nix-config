@@ -1,14 +1,9 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, lib, ... }:
 {
-    #  imports = [
-    #    ./starship.nix
-    #  ];
+  #imports = [
+  #  ./starship.nix
+  #];
 
-  sops.secrets = {
-    "cattledog/url" = {};
-    "cattledog/access_key" = {};
-    "cattledog/secret_key" = {};
-  };
   home.packages = with pkgs; [
     rmtrash
     fzf   # fuzzy finder
@@ -64,9 +59,6 @@
         if [[ -r "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh" ]]; then
           source "''${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-''${(%):-%n}.zsh"
         fi
-       export CATTLEDOG_API_URL="$(cat ${config.sops.secrets."cattledog/url".path})"
-       export CATTLEDOG_ACCESS_KEY="$(cat ${config.sops.secrets."cattledog/access_key".path})"
-       export CATTLEDOG_SECRET_KEY="$(cat ${config.sops.secrets."cattledog/secret_key".path})"
       '')
       (lib.mkAfter (lib.readFile ./zshrc))
       (lib.mkAfter (lib.readFile ./functions.zsh))

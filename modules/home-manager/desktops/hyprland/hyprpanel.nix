@@ -9,7 +9,7 @@ in
     settings =  {
       bar = {
         layouts = {
-          "0" = {
+          "*" = {
             left = [ "dashboard" "workspaces" "windowtitle" ];
             middle = [ "notifications" "clock"];
             right = if isLaptop then 

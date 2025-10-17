@@ -1,0 +1,14 @@
+default:
+  just --list
+
+# Rebuild switch current configuration
+rebuild:
+  #!/usr/bin/env bash
+  cd ~/.config/home-manager
+  git pull
+  home-manager --flake ~/.config/home-manager#devcontainer@devcontainer switch -L -b backup --extra-experimental-features nix-command --extra-experimental-features flakes
+
+# Garbage collect nix store
+gc:
+  nix-collect-garbage -d --delete-older-than 1d
+  nix store optimise --extra-experimental-features nix-command

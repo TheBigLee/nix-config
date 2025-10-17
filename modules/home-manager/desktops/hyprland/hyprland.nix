@@ -92,7 +92,7 @@
         "$mod, Q, killactive"
         "$mod, SPACE, exec, $menu"
         "$mod, E, exec, $fileManager"
-        "$mod, B, exec, zen"
+        "$mod, B, exec, zen-twilight"
         "$mod, L, exec, hyprlock"
         "$mod, M, exit"
         "$mod, T, togglefloating"
