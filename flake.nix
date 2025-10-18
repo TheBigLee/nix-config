@@ -31,6 +31,9 @@
     # Use Auxolotl lib
     lib.url = "git+https://git.auxolotl.org/auxolotl/lib?ref=main";
 
+    # Support for nix-on-droid
+    nixpkgs-droid.url = "github:nixos/nixpkgs/nixos-25.05";
+
     # NixOS hardware quirks
     nixos-hardware.url = "github:NixOS/nixos-hardware?ref=master";
 
@@ -78,6 +81,7 @@
       nixos-hardware,
       nixpkgs,
       nixpkgs-unstable,
+      nix-on-droid,
     #hyprland,
       hyprpanel,
       stylix,
