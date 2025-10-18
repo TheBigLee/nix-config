@@ -32,7 +32,10 @@
     lib.url = "git+https://git.auxolotl.org/auxolotl/lib?ref=main";
 
     # Support for nix-on-droid
-    nixpkgs-droid.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs-droid.url = "github:nixos/nixpkgs/nixos-24.05";
+    home-manager-droid = {
+      url = "github:nix-community/home-manager/release-24.05";
+      inputs.nixpkgs.follows = "nixpkgs-droid";
 
     # NixOS hardware quirks
     nixos-hardware.url = "github:NixOS/nixos-hardware?ref=master";
