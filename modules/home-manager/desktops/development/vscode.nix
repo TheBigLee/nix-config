@@ -39,6 +39,7 @@
       "github.copilot.renameSuggestions.triggerAutomatically" = false;
       "chat.commandCenter.enabled" = false;
       "chat.agent.enabled" = false;
+      "claudeCode.claudeProcessWrapper" = "${pkgs.claude-code}/bin/claude";
     };
     profiles.default.keybindings = [
       {

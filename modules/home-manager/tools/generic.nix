@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     bash
     btop
+    claude-code
     eza   # better ls
     fd    # find replacement
     htop
