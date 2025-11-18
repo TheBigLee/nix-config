@@ -200,6 +200,9 @@
         "float, class:^(steam)$"
         "float, class:^(1Password)$"
         "workspace special, class:^(ferdium)$"
+        "idleinhibit fullscreen, class:^(*)$"
+        "idleinhibit fullscreen, title:^(*)$"
+        "idleinhibit fullscreen, fullscreen:1"
       ];
     };
   };
