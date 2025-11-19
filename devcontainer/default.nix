@@ -3,7 +3,7 @@
 {
   imports = [
     ../modules/home-manager/tools/zsh
-    #    ../modules/home-manager/tools/git.nix
+    ../modules/home-manager/tools/git.nix
   ];
 
   home = {
