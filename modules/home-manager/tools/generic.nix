@@ -20,6 +20,8 @@
     paralus-cli
     wl-clipboard
     yq-go
+    hcloud
+    talosctl
   ];
 
   programs = {
