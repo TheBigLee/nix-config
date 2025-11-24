@@ -17,11 +17,13 @@
     kubectx
     obsidian
     openshift
+    opentofu
     paralus-cli
     wl-clipboard
     yq-go
     hcloud
     talosctl
+    kubernetes-helm
   ];
 
   programs = {
