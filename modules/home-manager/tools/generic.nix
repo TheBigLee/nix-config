@@ -24,6 +24,8 @@
     hcloud
     talosctl
     kubernetes-helm
+    gitleaks
+    pre-commit
   ];
 
   programs = {
