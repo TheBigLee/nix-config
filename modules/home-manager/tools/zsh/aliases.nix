@@ -49,7 +49,7 @@ in
   #-------------Kubernetes------------
   kubectl = "kubecolor";
   k = "kubectl";
-  ka = "kubectl --as cluster-admin";
+  ka = "kubectl --as=system:admin";
   pctl = "cli";
 
   #-------------SSH---------------
