@@ -4,6 +4,11 @@
     inputs.zen-browser.homeModules.twilight-official
   ];
 
+  stylix.targets.zen-browser.profileNames = [
+      "${config.home.username}"
+  ];
+
+
   programs.zen-browser = {
     enable = true;
 

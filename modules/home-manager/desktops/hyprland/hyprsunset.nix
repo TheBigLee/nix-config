@@ -9,21 +9,19 @@
   services.hyprsunset = {
     enable = true;
     package = pkgs.hyprsunset;
-    transitions = {
-      sunrise = {
-        calendar = "*-*-* 09:00:00";
-        requests = [
-          [ "temperature" "6650" ]
-          [ "gamma 100" ]
-        ];
-      };
-      sunset = {
-        calendar = "*-*-* 19:00:00";
-        requests = [
-          [ "temperature" "3500" ]
-          [ "gamma 50" ]
-        ];
-      };
+    settings = {
+      profile = [
+        {
+          time = "09:00";
+          temperature = 6650;
+          gamma = 100;
+        }
+        {
+          time = "19:00";
+          temperature = 3500;
+          gamma = 50;
+        }
+      ];
     };
   };
 }

@@ -16,7 +16,7 @@
     wofi
 
     qt6.qtwayland
-    qt6ct
+    qt6Packages.qt6ct
     hyprshot
     hyprpicker
     swappy

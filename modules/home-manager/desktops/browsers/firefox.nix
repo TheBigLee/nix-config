@@ -15,6 +15,7 @@ in
   # - Go over existing profiles to add settings
   # - Setup a separate work profile?
   # - Port bookmarks and other profile settings over from existing profile
+
   programs.firefox = {
     enable = true;
 
@@ -98,7 +99,7 @@ in
 
     profiles.main = {
       id = 0;
-      name = "Bigli";
+      name = "${config.home.username}";
       isDefault = true;
 
       # FIXME(firefox): These should probably be in a let .. in block so I can re-use if I setup
