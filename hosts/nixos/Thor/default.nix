@@ -1,4 +1,4 @@
-{ config, inputs, lib, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 let
   stateVersion = "25.05";
@@ -45,6 +45,9 @@ in
 
   hardware.graphics = {
     enable = true;
+    extraPackages = with pkgs; [
+      libvdpau-va-gl
+    ];
   };
 
   services.xserver.videoDrivers = ["nvidia"];
