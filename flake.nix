@@ -65,10 +65,10 @@
     };
 
     # Code formatter
-    treefmt = {
-      url = "github:numtide/treefmt-nix?ref=main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #treefmt = {
+    #  url = "github:numtide/treefmt-nix?ref=main";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs =
@@ -83,7 +83,7 @@
       stylix,
       self,
       systems,
-      treefmt,
+      #treefmt,
       ...
     }:
     let
@@ -92,7 +92,7 @@
       forEachSystem =
         function: nixpkgs.lib.genAttrs (import systems) (system: function nixpkgs.legacyPackages.${system});
 
-      treefmtEval = forEachSystem (pkgs: treefmt.lib.evalModule pkgs ./treefmt.nix);
+      #treefmtEval = forEachSystem (pkgs: treefmt.lib.evalModule pkgs ./treefmt.nix);
 
       # ========== Extend lib with lib.custom ==========
       # NOTE: This approach allows lib.custom to propagate into hm
@@ -106,10 +106,10 @@
       };
     in
     {
-      checks = forEachSystem (pkgs: {
-        formatting = treefmtEval.${pkgs.system}.config.build.check self;
-      });
-      formatter = forEachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
+      #checks = forEachSystem (pkgs: {
+      #  formatting = treefmtEval.${pkgs.system}.config.build.check self;
+      #});
+      #formatter = forEachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
 
       overlays = import ./overlays { inherit inputs; };
 

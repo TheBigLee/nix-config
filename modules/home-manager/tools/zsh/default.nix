@@ -4,6 +4,10 @@
   #  ./starship.nix
   #];
 
+  sops.secrets = {
+    "tofu_state" = {};
+  };
+
   home.packages = with pkgs; [
     rmtrash
     fzf   # fuzzy finder
@@ -76,6 +80,7 @@
         compdef kubecolor=kubectl
 
         export PATH="''${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+        export TOFU_STATE_ENCRYPTION="$(cat ${config.sops.secrets."tofu_state".path})"
       '')
     ];
 
