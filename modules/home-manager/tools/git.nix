@@ -35,7 +35,6 @@
       };
       merge.conflictStyle = "zdiff3";
       pull = {
-        ff = "only";
         rebase = true;
       };
       push.autoSetupRemote = "true";
