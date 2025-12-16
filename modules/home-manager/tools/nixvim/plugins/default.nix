@@ -45,7 +45,7 @@
     # ========== search ==========
     #
     nixvim-config.plugins.telescope.enable = lib.mkDefault true;
-    nixvim-config.plugins.wilder.enable = lib.mkDefault true;
+    nixvim-config.plugins.wilder.enable = lib.mkDefault false;
     #
     # ========== sessions ==========
     #
