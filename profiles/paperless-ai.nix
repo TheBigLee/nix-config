@@ -5,35 +5,6 @@
   ...
 }:
 with lib; {
-  # Enable paperless-ngx service
-  services.paperless = {
-    enable = true;
-    port = 28981;
-    consumptionDirIsPublic = true;
-    passwordFile = "/etc/paperless-admin-pass";
-    
-    settings = {
-      PAPERLESS_CONSUMER_IGNORE_PATTERN = [
-        ".DS_STORE/*"
-        "desktop.ini"
-      ];
-      PAPERLESS_OCR_LANGUAGE = "eng+deu";
-      PAPERLESS_OCR_USER_ARGS = {
-        optimize = 1;
-        pdfa_image_compression = "lossless";
-      };
-      PAPERLESS_URL = "http://localhost:28981";
-      PAPERLESS_ALLOWED_HOSTS = "localhost";
-      PAPERLESS_CORS_ALLOWED_HOSTS = "http://localhost:28981,http://localhost:3000";
-    };
-  };
-  
-  # Create password file
-  environment.etc."paperless-admin-pass" = {
-    text = "paperless123";
-    mode = "0600";
-  };
-  
   # Enable Docker for paperless-ai
   virtualisation.docker = {
     enable = true;
@@ -42,8 +13,7 @@ with lib; {
   # Create systemd service for paperless-ai
   systemd.services.paperless-ai = {
     description = "Paperless-AI extension";
-    after = ["docker.service" "paperless-consumer.service"];
-    wants = ["paperless-consumer.service"];
+    after = ["docker.service"];
     wantedBy = ["multi-user.target"];
     
     serviceConfig = {
