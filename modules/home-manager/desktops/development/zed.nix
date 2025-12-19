@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     devcontainer
+    devpod
     zed-editor
   ];
 

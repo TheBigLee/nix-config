@@ -14,7 +14,7 @@
       identitiesOnly = true;
       identityFile = "~/.ssh/id_ed25519_2025";
       extraOptions = {
-        "Include" = "sshop_config";
+        "Include" = "sshop_config devpod_config";
       };
     };
   };

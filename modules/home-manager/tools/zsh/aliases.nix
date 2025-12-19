@@ -64,4 +64,7 @@ in
 
   #-------------Git Goodness-------------
   # just reference `$ alias` and use the defaults, they're good.
+  
+  #-------------Misc aliases-------------
+  zed = "zeditor";
 }
