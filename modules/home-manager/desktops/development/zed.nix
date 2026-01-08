@@ -9,6 +9,7 @@
     devcontainer
     devpod
     zed-editor
+    jsonnet
   ];
 
 }
