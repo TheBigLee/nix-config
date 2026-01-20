@@ -9,6 +9,10 @@ let
   #  };
 in {
   services.displayManager = {
+    autoLogin = {
+      enable = true;
+      user = config.hostSpec.username;
+    };
     sddm = {
       enable = true;
       wayland.enable = true;
