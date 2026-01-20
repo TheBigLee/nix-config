@@ -10,6 +10,7 @@
     htop
     jq
     just
+    k9s
     krew
     kubecolor
     kubectl
