@@ -36,7 +36,7 @@ in
       hashedPasswordFile = sopsHashedPasswordFile;
       home = "/home/${hostSpec.username}";
       openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE5cVc/FNIWZ24dA0147cXiCEWW/vkRNI0CCPi+13m21 main@2025"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBT8mlBe9dtarqd3vcrBw9zQzz2ktXAVqtVBVE/4ClAL main@2026"
       ];
     };
     groups.${hostSpec.username} = {};
