@@ -3,6 +3,7 @@
 {
   imports = [
     ../modules/home-manager/tools/zsh
+    ../modules/home-manager/tools/nixvim
     #    ../modules/home-manager/tools/git.nix
   ];
 
