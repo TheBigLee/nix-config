@@ -2,11 +2,12 @@
 
 {
   imports = [
-    ../lib/default.nix
     ../modules/home-manager/tools/zsh
     ../modules/home-manager/tools/nixvim
     #    ../modules/home-manager/tools/git.nix
   ];
+
+  lib = lib.extend (self: super: { custom = import ../lib { inherit lib; }; });
 
   home = {
     username = "vscode";
