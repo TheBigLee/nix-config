@@ -37,12 +37,10 @@
             };
           };
         };
-
-        # vim-go - fatih/vim-go
-        vim-go = {
-          enable = true;
-        };
       };
+
+      # vim-go - fatih/vim-go (not a nixvim module, add via extraPlugins)
+      extraPlugins = [ pkgs.vimPlugins.vim-go ];
 
       # DAP keymaps
       keymaps = [
