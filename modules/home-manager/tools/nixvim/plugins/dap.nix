@@ -37,6 +37,11 @@
             };
           };
         };
+
+        # vim-go - fatih/vim-go
+        vim-go = {
+          enable = true;
+        };
       };
 
       # DAP keymaps
