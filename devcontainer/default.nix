@@ -70,6 +70,9 @@
     };
   };
 
+  # Disable dconf in devcontainer (no dbus available)
+  dconf.enable = false;
+
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "25.05";
 
