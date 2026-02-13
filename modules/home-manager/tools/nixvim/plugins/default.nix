@@ -42,6 +42,10 @@
     nixvim-config.plugins.fidget.enable = lib.mkDefault true;
     nixvim-config.plugins.lspconfig.enable = lib.mkDefault true;
     #
+    # ========== debugging ==========
+    #
+    nixvim-config.plugins.dap.enable = lib.mkDefault true;
+    #
     # ========== search ==========
     #
     nixvim-config.plugins.telescope.enable = lib.mkDefault true;
