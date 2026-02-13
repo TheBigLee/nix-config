@@ -1,10 +1,13 @@
 { config, pkgs, lib, ... }:
+let
+  isDevcontainer = config.hostSpec.hostName == "devcontainer";
+in
 {
   #imports = [
   #  ./starship.nix
   #];
 
-  sops.secrets = {
+  sops.secrets = lib.mkIf (!isDevcontainer) {
     "tofu_state" = {};
   };
 
@@ -80,7 +83,7 @@
         compdef kubecolor=kubectl
 
         export PATH="''${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-        export TOFU_STATE_ENCRYPTION="$(cat ${config.sops.secrets."tofu_state".path})"
+        ${lib.optionalString (!isDevcontainer) ''export TOFU_STATE_ENCRYPTION="$(cat ${config.sops.secrets."tofu_state".path})"''}
       '')
     ];
 

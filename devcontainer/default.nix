@@ -1,13 +1,48 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, inputs, config, ... }:
 
 {
   imports = [
+    inputs.stylix.homeModules.stylix
+    ../modules/common/host-spec.nix
+    ../modules/home-manager/tools/sops.nix
     ../modules/home-manager/tools/zsh
     ../modules/home-manager/tools/nixvim
     #    ../modules/home-manager/tools/git.nix
   ];
 
-  lib = lib.extend (self: super: { custom = import ../lib { inherit lib; }; });
+  stylix = {
+    enable = true;
+    polarity = "dark";
+    fonts = {
+      serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
+      sansSerif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
+      };
+      monospace = {
+        package = pkgs.fira-code;
+        name = "FiraCode Nerd Font";
+      };
+      emoji = {
+        package = pkgs.noto-fonts-color-emoji;
+        name = "Noto Color Emoji";
+      };
+    };
+  };
+
+  # Define hostSpec for devcontainer context
+  hostSpec = {
+    username = "vscode";
+    name = "DevContainer User";
+    hostName = "devcontainer";
+    email = {
+      primary = "dev@example.com";
+    };
+    monitor = "";
+  };
 
   home = {
     username = "vscode";

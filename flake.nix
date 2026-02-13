@@ -126,9 +126,10 @@
       );
       homeConfigurations = {
         "devcontainer@devcontainer" = home-manager.lib.homeManagerConfiguration {
+          inherit lib; # Pass extended lib - home-manager will add lib.hm
           pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
           extraSpecialArgs = {inherit inputs outputs;};
-          modules = [./devcontainer/default.nix];
+          modules = [./devcontainer];
         };
       };
 
