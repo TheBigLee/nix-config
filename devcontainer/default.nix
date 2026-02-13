@@ -12,10 +12,7 @@
 
   stylix = {
     enable = true;
-    image = pkgs.fetchurl {
-      url = "https://github.com/TheBigLee/nix-config/blob/main/files/system/stylix/wallpapers/void_girl.png?raw=true";
-      hash = "sha256-zAQehTgMMQ9z8DK2HRwAVvVjUb6xhiMrsOmfrIRJUrI=";
-    };
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
     polarity = "dark";
     fonts = {
       serif = {
