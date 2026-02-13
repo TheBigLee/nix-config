@@ -60,6 +60,8 @@
     kind
     cookiecutter
     kitty
+    direnv
+    kubectl
   ];
 
   programs = {
