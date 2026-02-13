@@ -59,6 +59,7 @@
     just
     kind
     cookiecutter
+    kitty
   ];
 
   programs = {
