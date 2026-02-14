@@ -16,6 +16,7 @@
     kubectl
     kubectl-split-config
     kubectx
+    lazygit
     obsidian
     openshift
     opentofu

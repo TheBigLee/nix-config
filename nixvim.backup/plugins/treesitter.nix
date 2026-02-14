@@ -18,6 +18,7 @@
           gitcommit
           gitignore
           go
+          help
           hyprlang
           jq
           json
@@ -39,7 +40,6 @@
           highlight.enable = true;
           indent.enable = true;
         };
-        #indent = true;
         folding = true;
         nixvimInjections = true;
       };

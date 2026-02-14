@@ -16,6 +16,10 @@
     enable = true;
     enableMan = true;
 
+    extraPackages = with pkgs; [
+      ripgrep # required for telescope live_grep
+    ];
+
     clipboard.register = "unnamedplus";
 
     opts = {
@@ -25,6 +29,7 @@
       signcolumn = "yes";
       cursorline = true;
       termguicolors = true;
+      colorcolumn = "120";
 
       # Indentation
       expandtab = true;
@@ -52,5 +57,18 @@
       swapfile = false;
       undofile = true;
     };
+
+    autoCmd = [
+      {
+        event = "FileType";
+        pattern = "gitcommit";
+        command = "setlocal colorcolumn=80";
+      }
+      {
+        event = "BufWritePre";
+        pattern = "*.go";
+        callback.__raw = "function() vim.lsp.buf.format() end";
+      }
+    ];
   };
 }

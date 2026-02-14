@@ -1,14 +1,20 @@
 { ... }:
 {
-  # Import plugin configurations here as you add them
-  # imports = [
-  #   ./treesitter.nix
-  #   ./telescope.nix
-  #   ./lspconfig.nix
-  # ];
-
-  programs.nixvim = {
-    # Add plugins here as needed
-    # plugins = { };
-  };
+  imports = [
+    ./bufferline.nix
+    ./cmp.nix
+    ./dap.nix
+    ./fidget.nix
+    ./fugitive.nix
+    ./harpoon.nix
+    ./lsp.nix
+    ./neo-tree.nix
+    ./neogit.nix
+    ./telescope.nix
+    ./todo-comments.nix
+    ./toggleterm.nix
+    ./treesitter.nix
+    ./undotree.nix
+    ./which-key.nix
+  ];
 }

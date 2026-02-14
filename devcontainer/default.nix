@@ -59,6 +59,9 @@
     kitty
     direnv
     kubectl
+    # Required for nixvim plugins
+    lazygit   # toggleterm integration
+    fd        # telescope find_files
   ];
 
   programs = {

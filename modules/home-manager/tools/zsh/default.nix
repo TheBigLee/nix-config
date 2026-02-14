@@ -91,6 +91,7 @@ in
 
     sessionVariables = {
       NIX_AUTO_RUN = true;
+      CGO_ENABLED = "0";
     };
 
     oh-my-zsh = {

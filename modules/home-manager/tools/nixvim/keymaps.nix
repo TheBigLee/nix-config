@@ -48,6 +48,64 @@
         key = ">";
         action = ">gv";
       }
+
+      # Move selected lines
+      {
+        mode = "v";
+        key = "J";
+        action = ":m '>+1<CR>gv=gv";
+        options.desc = "Move selection down";
+      }
+      {
+        mode = "v";
+        key = "K";
+        action = ":m '<-2<CR>gv=gv";
+        options.desc = "Move selection up";
+      }
+
+      # Centered scrolling
+      {
+        mode = "n";
+        key = "<C-d>";
+        action = "<C-d>zz";
+        options.desc = "Scroll down (centered)";
+      }
+      {
+        mode = "n";
+        key = "<C-u>";
+        action = "<C-u>zz";
+        options.desc = "Scroll up (centered)";
+      }
+
+      # Centered search navigation
+      {
+        mode = "n";
+        key = "n";
+        action = "nzzzv";
+        options.desc = "Next search result (centered)";
+      }
+      {
+        mode = "n";
+        key = "N";
+        action = "Nzzzv";
+        options.desc = "Previous search result (centered)";
+      }
+
+      # Paste without overriding register
+      {
+        mode = "v";
+        key = "<Leader>p";
+        action = "\"_dP";
+        options.desc = "Paste without overriding register";
+      }
+
+      # Yank to system clipboard
+      {
+        mode = [ "n" "v" ];
+        key = "<Leader>y";
+        action = "\"+y";
+        options.desc = "Yank to system clipboard";
+      }
     ];
   };
 }
