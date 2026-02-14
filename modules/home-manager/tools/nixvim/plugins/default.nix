@@ -8,7 +8,9 @@
     ./fugitive.nix
     ./harpoon.nix
     ./lsp.nix
+    ./lualine.nix
     ./neo-tree.nix
+    ./overseer.nix
     ./neogit.nix
     ./telescope.nix
     ./todo-comments.nix

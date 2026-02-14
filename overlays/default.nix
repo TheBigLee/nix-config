@@ -21,11 +21,14 @@ let
       config.allowUnfree = true;
     };
   };
+
+  claude-code = inputs.claude-code.overlays.default;
 in
 {
-  default = 
+  default =
     final: prev:
     (additions final prev)
     // (modifications final prev)
-    // (unstable-packages final prev);
+    // (unstable-packages final prev)
+    // (claude-code final prev);
 }
