@@ -70,5 +70,11 @@
         callback.__raw = "function() vim.lsp.buf.format() end";
       }
     ];
+
+    extraConfigLua = ''
+      -- Make inactive windows also transparent
+      vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+    '';
   };
 }

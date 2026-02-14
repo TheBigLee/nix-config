@@ -34,17 +34,40 @@
 
     extraConfigLua = ''
       local dap, dapui = require("dap"), require("dapui")
+
+      local function set_debug_keymaps()
+        vim.keymap.set("n", "<F5>", "<cmd>DapContinue<CR>", { desc = "Continue" })
+        vim.keymap.set("n", "<F9>", "<cmd>DapToggleBreakpoint<CR>", { desc = "Toggle breakpoint" })
+        vim.keymap.set("n", "<F10>", "<cmd>DapStepOver<CR>", { desc = "Step over" })
+        vim.keymap.set("n", "<F11>", "<cmd>DapStepInto<CR>", { desc = "Step into" })
+        vim.keymap.set("n", "<F12>", "<cmd>DapStepOut<CR>", { desc = "Step out" })
+        vim.keymap.set("n", "<S-F5>", "<cmd>DapTerminate<CR>", { desc = "Terminate" })
+      end
+
+      local function unset_debug_keymaps()
+        pcall(vim.keymap.del, "n", "<F5>")
+        pcall(vim.keymap.del, "n", "<F9>")
+        pcall(vim.keymap.del, "n", "<F10>")
+        pcall(vim.keymap.del, "n", "<F11>")
+        pcall(vim.keymap.del, "n", "<F12>")
+        pcall(vim.keymap.del, "n", "<S-F5>")
+      end
+
       dap.listeners.before.attach.dapui_config = function()
         dapui.open()
+        set_debug_keymaps()
       end
       dap.listeners.before.launch.dapui_config = function()
         dapui.open()
+        set_debug_keymaps()
       end
       dap.listeners.before.event_terminated.dapui_config = function()
         dapui.close()
+        unset_debug_keymaps()
       end
       dap.listeners.before.event_exited.dapui_config = function()
         dapui.close()
+        unset_debug_keymaps()
       end
     '';
   };
