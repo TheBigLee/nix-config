@@ -6,8 +6,10 @@
     ./dap.nix
     ./fidget.nix
     ./fugitive.nix
+    ./gitsigns.nix
     ./harpoon.nix
     ./lsp.nix
+    ./lsp-signature.nix
     ./lualine.nix
     ./neo-tree.nix
     ./overseer.nix
