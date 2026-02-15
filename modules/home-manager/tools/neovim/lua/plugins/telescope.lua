@@ -27,7 +27,7 @@ return {
           hijack_netrw = false,
           grouped = true,
           sorting_strategy = "ascending",
-          initial_mode = "normal",
+          initial_mode = "insert",
         },
       },
     })

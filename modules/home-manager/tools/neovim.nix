@@ -1,6 +1,31 @@
 { pkgs, lib, config, ... }:
 let
   flakeRoot = lib.custom.relativeToRoot "./.";
+  treesitterParsers = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: with p; [
+    bash
+    diff
+    dockerfile
+    git_config
+    git_rebase
+    gitcommit
+    gitignore
+    go
+    hyprlang
+    jq
+    json
+    jsonnet
+    lua
+    make
+    markdown
+    nix
+    python
+    regex
+    ssh_config
+    toml
+    vim
+    vimdoc
+    yaml
+  ]);
 in
 {
   stylix.targets.neovim.enable = false;
@@ -21,24 +46,26 @@ in
   };
 
   home.packages = with pkgs; [
-    ripgrep
     delve
-    lazygit
     fd
+    gcc
+    gopls
+    lazygit
+    ripgrep
   ];
+  xdg.configFile."nvim" = {
+    source = ./neovim;
+    recursive = true;
+  };
 
-#  xdg.configFile."nvim" = {
-#    source = ./neovim;
-#    recursive = true;
-#  };
-#
-#  xdg.configFile."nvim/lua/nix-env.lua" = {
-#    text = ''
-#      return {
-#        flake_root = "${flakeRoot}",
-#        hostname = "${config.hostSpec.hostName}",
-#        username = "${config.hostSpec.username}",
-#      }
-#    '';
-#  };
+  xdg.configFile."nvim/lua/nix-env.lua" = {
+    text = ''
+      return {
+        flake_root = "${flakeRoot}",
+        hostname = "${config.hostSpec.hostName}",
+        username = "${config.hostSpec.username}",
+        treesitter_parser_dir = "${treesitterParsers}/parser",
+      }
+    '';
+  };
 }

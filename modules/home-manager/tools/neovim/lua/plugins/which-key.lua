@@ -1,5 +1,11 @@
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
-  opts = {},
+  opts = {
+    win = {
+      wo = {
+        winhighlight = "Normal:WhichKeyNormal",
+      },
+    },
+  },
 }
