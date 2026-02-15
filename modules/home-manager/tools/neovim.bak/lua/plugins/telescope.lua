@@ -1,12 +1,12 @@
 return {
-  'nvim-telescope/telescope.nvim', version = 'v0.2.1',
+  "nvim-telescope/telescope.nvim",
   dependencies = {
-    'nvim-lua/plenary.nvim',
-    'nvim-tree/nvim-web-devicons',
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "nvim-telescope/telescope-fzf-native.nvim",
     {
-      'nvim-telescope/telescope-file-browser.nvim',
-      dependencies = { 'nvim-lua/plenary.nvim' },
+      "nvim-telescope/telescope-file-browser.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
     },
   },
   cmd = "Telescope",
@@ -31,7 +31,7 @@ return {
         },
       },
     })
-    telescope.load_extension("fzf")
+    telescope.load_extension("fzf_native")
     telescope.load_extension("file_browser")
   end,
 }

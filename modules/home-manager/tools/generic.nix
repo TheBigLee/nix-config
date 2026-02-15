@@ -7,6 +7,7 @@
     claude-code
     eza   # better ls
     fd    # find replacement
+    gcc
     htop
     jq
     just

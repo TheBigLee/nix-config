@@ -1,6 +1,7 @@
 local map = vim.keymap.set
 
-map("n", "<Esc>", "<cmd>noholsearch<CR>")
+-- Clear search highlighting
+map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Better window navigation
 map("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
@@ -29,4 +30,3 @@ map("v", "<Leader>p", '"_dP', { desc = "Paste without overriding register" })
 
 -- Yank to system clipboard
 map({ "n", "v" }, "<Leader>y", '"+y', { desc = "Yank to system clipboard" })
-

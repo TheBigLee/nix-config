@@ -40,3 +40,7 @@ opt.undofile = true
 -- Which-key timeout
 opt.timeout = true
 opt.timeoutlen = 300
+
+-- Transparent background
+vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
