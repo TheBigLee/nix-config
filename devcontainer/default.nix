@@ -6,7 +6,7 @@
     ../modules/common/host-spec.nix
     ../modules/home-manager/tools/sops.nix
     ../modules/home-manager/tools/zsh
-    ../modules/home-manager/tools/nixvim
+    ../modules/home-manager/tools/neovim.nix
     #    ../modules/home-manager/tools/git.nix
   ];
 
@@ -59,9 +59,6 @@
     kitty
     direnv
     kubectl
-    # Required for nixvim plugins
-    lazygit   # toggleterm integration
-    fd        # telescope find_files
   ];
 
   programs = {

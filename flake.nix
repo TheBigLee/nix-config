@@ -39,11 +39,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.11";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-secrets = {
       url = "git+ssh://git@github.com/TheBigLee/nix-secrets.git?ref=main&shallow=1";
       inputs = { };
