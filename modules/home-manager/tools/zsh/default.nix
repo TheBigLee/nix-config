@@ -82,6 +82,9 @@ in
         export KUBE_EDITOR="nvim"
         compdef kubecolor=kubectl
 
+        export CGO_ENABLED=0
+
+
         export PATH="''${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
         ${lib.optionalString (!isDevcontainer) ''export TOFU_STATE_ENCRYPTION="$(cat ${config.sops.secrets."tofu_state".path})"''}
       '')
@@ -91,7 +94,6 @@ in
 
     sessionVariables = {
       NIX_AUTO_RUN = true;
-      CGO_ENABLED = "0";
     };
 
     oh-my-zsh = {
