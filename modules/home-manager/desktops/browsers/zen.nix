@@ -5,16 +5,14 @@
   ];
 
   stylix.targets.zen-browser.profileNames = [
-      "${config.home.username}"
+      "default"
   ];
 
 
   programs.zen-browser = {
     enable = true;
 
-    profiles = {
-      "${config.home.username}" = {};
-    };
+    profiles."default" = {};
 
     policies = {
       AutofillCrediCardEnabled = false;
