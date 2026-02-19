@@ -39,6 +39,11 @@ in
           type = types.str;
           description = "The name of the main monitor of the host";
         };
+        nixConfigPath = mkOption {
+          type = types.str;
+          default = "";
+          description = "Absolute path to the nix-config repository. If empty, defaults to <homeDirectory>/dev/nix/nix-config.";
+        };
         profiles = mkOption {
           type = types.attrsOf (types.submodule profileModule);
           default = {};

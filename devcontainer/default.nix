@@ -43,6 +43,7 @@
       primary = "dev@example.com";
     };
     monitor = "";
+    nixConfigPath = "/home/vscode/.config/home-manager";
   };
 
   home = {

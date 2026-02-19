@@ -1,31 +1,14 @@
 { pkgs, lib, config, ... }:
 let
   flakeRoot = lib.custom.relativeToRoot "./.";
-  treesitterParsers = pkgs.vimPlugins.nvim-treesitter.withPlugins (p: with p; [
-    bash
-    diff
-    dockerfile
-    git_config
-    git_rebase
-    gitcommit
-    gitignore
-    go
-    hyprlang
-    jq
-    json
-    jsonnet
-    lua
-    make
-    markdown
-    nix
-    python
-    regex
-    ssh_config
-    toml
-    vim
-    vimdoc
-    yaml
-  ]);
+
+  # Path to the nix-config repo — can be overridden via hostSpec.nixConfigPath
+  nixConfigPath = if config.hostSpec.nixConfigPath != ""
+                  then config.hostSpec.nixConfigPath
+                  else "${config.home.homeDirectory}/dev/nix/nix-config";
+
+  # Path to your dotfiles in the git repo (absolute path for out-of-store symlinks)
+  dotfilesPath = "${nixConfigPath}/files/dotfiles";
 in
 {
   stylix.targets.neovim.enable = false;
@@ -35,14 +18,6 @@ in
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    extraLuaConfig = ''
-      vim.g.mapleader = " "
-      vim.g.maplocalleader = "\\"
-      require("config.options")
-      require("config.lazy")
-      require("config.autocmds")
-      require("config.keymaps")
-    '';
   };
 
   home.packages = with pkgs; [
@@ -50,22 +25,29 @@ in
     fd
     gcc
     gopls
+    jsonnet-language-server
     lazygit
+    lua-language-server
+    nodejs
     ripgrep
+    unzip
+    vscode-langservers-extracted  # jsonls, htmlls, cssls, eslint
+    yaml-language-server
   ];
-  xdg.configFile."nvim" = {
-    source = ./neovim;
-    recursive = true;
+
+  home.file = {
+    ".config/nvim" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/neovim";
+    };
   };
 
-  xdg.configFile."nvim/lua/nix-env.lua" = {
-    text = ''
-      return {
-        flake_root = "${flakeRoot}",
-        hostname = "${config.hostSpec.hostName}",
-        username = "${config.hostSpec.username}",
-        treesitter_parser_dir = "${treesitterParsers}/parser",
-      }
-    '';
-  };
+  #xdg.configFile."nvim/lua/nix-env.lua" = {
+  #  text = ''
+  #    return {
+  #      flake_root = "${flakeRoot}",
+  #      hostname = "${config.hostSpec.hostName}",
+  #      username = "${config.hostSpec.username}",
+  #    }
+  #  '';
+  #};
 }
