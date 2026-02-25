@@ -7,6 +7,7 @@
     claude-code
     eza   # better ls
     fd    # find replacement
+    gnome-calculator
     htop
     jq
     just
@@ -27,6 +28,7 @@
     talosctl
     kubernetes-helm
     gitleaks
+    nextcloud-client
     pre-commit
   ];
 

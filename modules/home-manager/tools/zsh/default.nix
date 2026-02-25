@@ -12,7 +12,6 @@ in
   };
 
   home.packages = with pkgs; [
-    rmtrash
     fzf   # fuzzy finder
     comma # run ", command" tu run a cmd in a temp nix shell
   ];

@@ -1,18 +1,20 @@
 { inputs, config, ... }:
 {
   imports = [
-    inputs.zen-browser.homeModules.twilight-official
+    inputs.zen-browser.homeModules.twilight
   ];
 
   stylix.targets.zen-browser.profileNames = [
-      "default"
+      "${config.home.username}"
   ];
 
 
   programs.zen-browser = {
     enable = true;
 
-    profiles."default" = {};
+    profiles = {
+      "${config.home.username}" = {};
+    };
 
     policies = {
       AutofillCrediCardEnabled = false;

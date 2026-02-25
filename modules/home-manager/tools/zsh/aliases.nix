@@ -55,13 +55,6 @@ in
   #-------------SSH---------------
   ssh = "TERM=xterm ssh";
 
-  #-------------rmtrash---------------
-  # Path to real rm and rmdir in coreutils. This is so we can not use rmtrash for big files
-  rrm = "/run/current-system/sw/bin/rm";
-  rrmdir = "/run/current-system/sw/bin/rmdir";
-  rm = "rmtrash";
-  rmdir = "rmdirtrash";
-
   #-------------Git Goodness-------------
   # just reference `$ alias` and use the defaults, they're good.
   
