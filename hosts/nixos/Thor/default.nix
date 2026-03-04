@@ -32,6 +32,7 @@ in
     #
     "profiles/ollama.nix"
     "profiles/paperless-ai.nix"
+    "profiles/unifi.nix"
     ])
   ];
 
@@ -41,7 +42,6 @@ in
     hostName = hostName;
     monitor = "DP-6";
   };
-
 
   hardware.graphics = {
     enable = true;
