@@ -81,7 +81,7 @@ in
 
   programs.neomutt = {
     enable = true;
-    vimKeys = true;
+    vimKeys = false;
     sort = "threads";
     sidebar = {
       enable = true;

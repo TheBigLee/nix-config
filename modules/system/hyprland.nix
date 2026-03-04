@@ -29,7 +29,6 @@
 
     ghostty
     kitty
-    zellij
     nautilus
 
     networkmanagerapplet
