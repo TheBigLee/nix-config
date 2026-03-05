@@ -25,6 +25,11 @@ in
     # ===== System modules ======
     #
     "modules/system"
+
+    #
+    # ===== Profiles ======
+    #
+    "profiles/ollama.nix"
     ])
   ];
 
