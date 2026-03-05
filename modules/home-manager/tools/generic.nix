@@ -13,6 +13,7 @@
     just
     k9s
     krew
+    ksd
     kubecolor
     kubectl
     kubectl-split-config
