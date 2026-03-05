@@ -7,6 +7,7 @@
 
     # Preserve devices/folders added or modified via the web UI
     overrideDevices = false;
+    overrideFolders = false;
 
     guiAddress = "0.0.0:8384";
 
