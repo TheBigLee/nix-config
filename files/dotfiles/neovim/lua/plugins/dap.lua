@@ -2,11 +2,9 @@ return {
   "mfussenegger/nvim-dap",
   dependencies = {
     {
-      "rcarriga/nvim-dap-ui",
-      dependencies = { "nvim-neotest/nvim-nio" },
-      config = function()
-        require("dapui").setup()
-      end,
+      "igorlfs/nvim-dap-view",
+      version = "1.*",
+      opts = {},
     },
     {
       "theHamsta/nvim-dap-virtual-text",
@@ -32,9 +30,9 @@ return {
     {
       "<Leader>du",
       function()
-        require("dapui").toggle()
+        require("dap-view").toggle()
       end,
-      desc = "Toggle DAP UI",
+      desc = "Toggle DAP view",
     },
     {
       "<Leader>dgt",
@@ -52,7 +50,7 @@ return {
     },
   },
   config = function()
-    local dap, dapui = require("dap"), require("dapui")
+    local dap, dapview = require("dap"), require("dap-view")
 
     local function set_debug_keymaps()
       vim.keymap.set("n", "<F5>", "<cmd>DapContinue<CR>", { desc = "Continue" })
@@ -72,20 +70,20 @@ return {
       pcall(vim.keymap.del, "n", "<S-F5>")
     end
 
-    dap.listeners.before.attach.dapui_config = function()
-      dapui.open()
+    dap.listeners.before.attach.dapview_config = function()
+      dapview.open()
       set_debug_keymaps()
     end
-    dap.listeners.before.launch.dapui_config = function()
-      dapui.open()
+    dap.listeners.before.launch.dapview_config = function()
+      dapview.open()
       set_debug_keymaps()
     end
-    dap.listeners.before.event_terminated.dapui_config = function()
-      dapui.close()
+    dap.listeners.before.event_terminated.dapview_config = function()
+      dapview.close()
       unset_debug_keymaps()
     end
-    dap.listeners.before.event_exited.dapui_config = function()
-      dapui.close()
+    dap.listeners.before.event_exited.dapview_config = function()
+      dapview.close()
       unset_debug_keymaps()
     end
   end,

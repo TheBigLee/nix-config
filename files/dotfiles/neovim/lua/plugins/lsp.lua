@@ -82,7 +82,14 @@ return {
       })
 
       vim.lsp.config('jsonls', { filetypes = { 'json' } })
-      vim.lsp.config('jsonnet_ls', { filetypes = { 'jsonnet', 'libsonnet' } })
+      vim.lsp.config('jsonnet_ls', {
+        filetypes = { 'jsonnet', 'libsonnet' },
+        settings = {
+          formatting = {
+            PadArrays = true,
+          },
+        },
+      })
       vim.lsp.config('yamlls', { filetypes = { 'yaml', 'yml' } })
 
       vim.lsp.enable({ 'lua_ls', 'gopls', 'jsonls', 'jsonnet_ls', 'yamlls' })

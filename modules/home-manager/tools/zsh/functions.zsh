@@ -31,5 +31,5 @@ argo_syn ()
     if ! kubectl -n syn get svc "$servicename" &> /dev/null; then
         servicename=syn-argocd-server;
     fi;
-    kubectl "$@" -n syn port-forward "svc/$servicename" 8088:80 &
+    kubectl "$@" -n syn port-forward "svc/$servicename" 8888:80 &
 }
