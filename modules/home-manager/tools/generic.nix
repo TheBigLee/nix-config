@@ -24,7 +24,7 @@
     opentofu
     paralus-cli
     wl-clipboard
-    yq-go
+    #yq-go
     hcloud
     talosctl
     kubernetes-helm
